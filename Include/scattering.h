@@ -68,7 +68,8 @@ struct prop_p{
  * @brief Bundle of meson_observables with momentum 0. 
  */
 struct mo_0{
-	meson_observable *rho[3][3];
+	// YD: Go to 6 to include g0gi
+	meson_observable *rho[6][6];
 	meson_observable *pi;
 };
 
@@ -78,7 +79,8 @@ struct mo_0{
 struct mo_p{
 	int p[3];
 	meson_observable *d, *r1, *r2, *r3, *r4, *pi;
-	meson_observable *t1[3], *t2[3], *rho[3][3];
+	// YD: Go to 6 to include g0gi
+	meson_observable *t1[6], *t2[6], *rho[6][6];
 };
 
 

@@ -185,6 +185,7 @@ int main(int argc, char *argv[])
     lprintf("MAIN", 0, "Configuration from %s\n", cnfg_filename);
     represent_gauge_field();
 
+            // YD: Going to 6 here to include g0gi
     struct mo_0 *mo_p0[numsources];
     struct mo_p *mo_p[Nmom][numsources];
     for (int i = 0; i < numsources; i++)
