@@ -68,7 +68,8 @@ struct prop_p{
  * @brief Bundle of meson_observables with momentum 0. 
  */
 struct mo_0{
-	meson_observable *rho[3][3];
+	// YD: Go to 6 to include g0gi
+	meson_observable *rho[6][6];
 	meson_observable *pi;
 };
 
@@ -78,7 +79,8 @@ struct mo_0{
 struct mo_p{
 	int p[3];
 	meson_observable *d, *r1, *r2, *r3, *r4, *pi;
-	meson_observable *t1[3], *t2[3], *rho[3][3];
+	// YD: Go to 6 to include g0gi
+	meson_observable *t1[6], *t2[6], *rho[6][6];
 };
 
 
@@ -105,8 +107,10 @@ void io2pt(meson_observable* mo, int pmax, int sourceno, char* path, char* name,
 void io4pt(meson_observable* mo, int pmax, int sourceno, char* path, char* name,char * cnfg_filename);
 void io2pt_logfile(meson_observable* mo, int pmax, int sourceno, char* path, char* name,char * cnfg_filename);
 void io4pt_logfile(meson_observable* mo, int pmax, int sourceno, char* path, char* name,char * cnfg_filename);
-void IOold_0(struct mo_0* molist[], int numsources, char* path, char* cnfg_filename, int pmax);
-void IOold_p(struct mo_p* molist[], int numsources, char* path, char* cnfg_filename, int pmax);
+void IO_0(struct mo_0* molist[], int numsources, char* path, char* cnfg_filename);
+void IO_0_axial(struct mo_0* molist[], int numsources, char* path, char* cnfg_filename);
+void IO_p(struct mo_p* molist[], int numsources, char* path, char* cnfg_filename, int pmax);
+void IO_p_axial(struct mo_p* molist[], int numsources, char* path, char* cnfg_filename, int pmax);
 void IO_json_0(struct mo_0* molist[], int numsources, char* path,char * cnfg_filename);
 void IO_json_p(struct mo_p* molist[], int numsources, char* path, char* cnfg_filename);
 void init_mo_0(struct mo_0* mo, int pmax);
